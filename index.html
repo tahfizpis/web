@@ -470,8 +470,7 @@ button.lihat-quran-btn:hover::after {
     <div class="login-header">
     <img src="https://raw.githubusercontent.com/tahfizpis/web/main/logotaqi.png" alt="Logo Mutaba'ah Tahfizh" />
 	<br>
-   <h1 class="judul">Mutaba'ah Tahfizh
-M. Taqi Lazuardi</h1>
+   <h1 class="judul">Mutaba'ah Tahfizh PonPes Imam Syafi'iy Kota Bima</h1>
     </div>
 
     <!-- Form Login -->
@@ -1257,7 +1256,7 @@ async function buatUserNIS() {
   
     <!-- Dashboard -->
     <div id="dashboard-card" class="card" style="display: none;">
-      <h1>Mutaba'ah Hafalan Al-Qur'an</h1>
+      <h1>Mutaba'ah Hafalan Al-Qur'an PIS</h1>
       <h2>Ahlan, <span id="namaUser"></span>!</h2>
 
      
@@ -1729,7 +1728,20 @@ function extendSemesterOptions(selectEl, max = SEMESTER_MAX) {
     <label>Jenjang:</label><br>
     <select id="inputJenjang" style="width:90%; margin-bottom:10px;">
   <option value=""></option>
-  <option value="A1">Private</option>
+  <option value="A1">1A</option>
+  <option value="A2">1B</option>
+  <option value="A3">2A</option>
+  <option value="A4">2B</option>
+  <option value="A5">3A</option>
+  <option value="A6">3B</option>
+  <option value="A7">4A</option>
+  <option value="A8">4B</option>
+  <option value="A9">5A1</option>
+  <option value="A10">5A2</option>
+  <option value="A11">5B</option>
+  <option value="A12">6A1</option>
+  <option value="A13">6A2</option>
+  <option value="A14">6B</option>
   </select>
 
     <div style="margin-top:10px; display:flex; justify-content:space-between; gap:8px;">
@@ -3322,7 +3334,7 @@ async function loadSantriData() {
   overlay.style.display = "flex";
 
   // ===== util jenjang (tetap) =====
-  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 32);
+  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 14);
 
   const parseJenjang = (v) => {
     const m = /^A(\d+)$/.exec(String(v || "").trim());
@@ -3765,48 +3777,36 @@ function callFillAyatOptions(selectEl, surahId, selectedAyat=""){
           <td class="col-nama">${santri.nama ?? ""}${subTanggal}</td>
           <td>
             <select class="jenjang">
-    <option value="A1" ${jenNow === 'A1' ? 'selected' : ''}>ILA</option>
-    <option value="A2" ${jenNow === 'A2' ? 'selected' : ''}>ILB</option>
-    <option value="A3" ${jenNow === 'A3' ? 'selected' : ''}>ILC</option>
-    <option value="A4" ${jenNow === 'A4' ? 'selected' : ''}>ILD</option>
-    <option value="A5" ${jenNow === 'A5' ? 'selected' : ''}>1A IM</option>
-    <option value="A6" ${jenNow === 'A6' ? 'selected' : ''}>1B IM</option>
-    <option value="A7" ${jenNow === 'A7' ? 'selected' : ''}>1C IM</option>
-    <option value="A8" ${jenNow === 'A8' ? 'selected' : ''}>1D IM</option>
-    <option value="A9" ${jenNow === 'A9' ? 'selected' : ''}>1E IM</option>
-    <option value="A10" ${jenNow === 'A10' ? 'selected' : ''}>1F IM</option>
-    <option value="A11" ${jenNow === 'A11' ? 'selected' : ''}>1G IM</option>
-    <option value="A12" ${jenNow === 'A12' ? 'selected' : ''}>1H IM</option>
-    <option value="A13" ${jenNow === 'A13' ? 'selected' : ''}>1I IM</option>
-    <option value="A14" ${jenNow === 'A14' ? 'selected' : ''}>1J IM</option>
-    <option value="A15" ${jenNow === 'A15' ? 'selected' : ''}>2A IM</option>
-    <option value="A16" ${jenNow === 'A16' ? 'selected' : ''}>2B IM</option>
-    <option value="A17" ${jenNow === 'A17' ? 'selected' : ''}>2C IM</option>
-    <option value="A18" ${jenNow === 'A18' ? 'selected' : ''}>2D IM</option>
-    <option value="A19" ${jenNow === 'A19' ? 'selected' : ''}>2E IM</option>
-    <option value="A20" ${jenNow === 'A20' ? 'selected' : ''}>2F IM</option>
-    <option value="A21" ${jenNow === 'A21' ? 'selected' : ''}>2G IM</option>
-    <option value="A22" ${jenNow === 'A22' ? 'selected' : ''}>2H IM</option>
-    <option value="A23" ${jenNow === 'A23' ? 'selected' : ''}>2I IM</option>
-    <option value="A24" ${jenNow === 'A24' ? 'selected' : ''}>3A IM</option>
-    <option value="A25" ${jenNow === 'A25' ? 'selected' : ''}>3B IM</option>
-    <option value="A26" ${jenNow === 'A26' ? 'selected' : ''}>3C IM</option>
-    <option value="A27" ${jenNow === 'A27' ? 'selected' : ''}>3D IM</option>
-    <option value="A28" ${jenNow === 'A28' ? 'selected' : ''}>3E IM</option>
-    <option value="A29" ${jenNow === 'A29' ? 'selected' : ''}>3F IM</option>
-    <option value="A30" ${jenNow === 'A30' ? 'selected' : ''}>3G IM</option>
-    <option value="A31" ${jenNow === 'A31' ? 'selected' : ''}>3H IM</option>
-    <option value="A32" ${jenNow === 'A32' ? 'selected' : ''}>3I IM</option>
+    <option value="A1" ${jenNow === 'A1' ? 'selected' : ''}>1A</option>
+    <option value="A2" ${jenNow === 'A2' ? 'selected' : ''}>1B</option>
+    <option value="A3" ${jenNow === 'A3' ? 'selected' : ''}>2A</option>
+    <option value="A4" ${jenNow === 'A4' ? 'selected' : ''}>2B</option>
+    <option value="A5" ${jenNow === 'A5' ? 'selected' : ''}>3A</option>
+    <option value="A6" ${jenNow === 'A6' ? 'selected' : ''}>3B</option>
+    <option value="A7" ${jenNow === 'A7' ? 'selected' : ''}>4A</option>
+    <option value="A8" ${jenNow === 'A8' ? 'selected' : ''}>4B</option>
+    <option value="A9" ${jenNow === 'A9' ? 'selected' : ''}>5A1</option>
+    <option value="A10" ${jenNow === 'A10' ? 'selected' : ''}>5A2</option>
+    <option value="A11" ${jenNow === 'A11' ? 'selected' : ''}>5B</option>
+    <option value="A12" ${jenNow === 'A12' ? 'selected' : ''}>6A1</option>
+    <option value="A13" ${jenNow === 'A13' ? 'selected' : ''}>6A2</option>
+    <option value="A14" ${jenNow === 'A14' ? 'selected' : ''}>6B</option>
   </select>
           </td>
           <td>
             <select class="semester">
-    <option value="1" ${String(semNow) === '1' ? 'selected' : ''}>1</option>
-    <option value="2" ${String(semNow) === '2' ? 'selected' : ''}>2</option>
-    <option value="3" ${String(semNow) === '3' ? 'selected' : ''}>3</option>
-    <option value="4" ${String(semNow) === '4' ? 'selected' : ''}>4</option>
-    <option value="5" ${String(semNow) === '5' ? 'selected' : ''}>5</option>
-    <option value="6" ${String(semNow) === '6' ? 'selected' : ''}>6</option>
+    <option value="1" ${String(semNow) === '1' ? 'selected' : ''}>SM1-1</option>
+    <option value="2" ${String(semNow) === '2' ? 'selected' : ''}>SM2-1</option>
+    <option value="3" ${String(semNow) === '3' ? 'selected' : ''}>SM1-2</option>
+    <option value="4" ${String(semNow) === '4' ? 'selected' : ''}>SM2-2</option>
+    <option value="5" ${String(semNow) === '5' ? 'selected' : ''}>SM1-3</option>
+    <option value="6" ${String(semNow) === '6' ? 'selected' : ''}>SM2-3</option>
+    <option value="7" ${String(semNow) === '7' ? 'selected' : ''}>SM1-4</option>
+    <option value="8" ${String(semNow) === '8' ? 'selected' : ''}>SM2-4</option>
+    <option value="9" ${String(semNow) === '9' ? 'selected' : ''}>SM1-5</option>
+    <option value="10" ${String(semNow) === '10' ? 'selected' : ''}>SM2-5</option>
+    <option value="11" ${String(semNow) === '11' ? 'selected' : ''}>SM1-6</option>
+    <option value="12" ${String(semNow) === '12' ? 'selected' : ''}>SM2-6</option>
   </select>
           </td>
 
@@ -3821,6 +3821,7 @@ function callFillAyatOptions(selectEl, surahId, selectedAyat=""){
     <option value="" ${!ketNow ? 'selected' : ''}></option>
     <option value="SP1" ${ketNow === 'SP1' ? 'selected' : ''}>SP1</option>
     <option value="SP2" ${ketNow === 'SP2' ? 'selected' : ''}>SP2</option>
+    <option value="SP3" ${ketNow === 'SP3' ? 'selected' : ''}>SP3</option>
   </select>
           </td>
           <td>
@@ -5228,30 +5229,8 @@ function keteranganDisplayForKey(key, fallback){
   // === Helper Kelas/Kelompok ===
 function buildKelasKelompokLine(kelas, kelasEl) {
   const kelasNum = (String(kelas||'').match(/(\d+)/)?.[1]) || (kelas || '-');
-  const custom = window.namaKelasCustom || window.NAMA_KELAS_CUSTOM || {  kelas_012025: "Ust. Ahmad Wildan BA",
-  kelas_022025: "Ust. Dicky Miswardi BA",
-  kelas_032025: "Ust. Jundullah BA",
-  kelas_042025: "Ust. Abdullah",
-  kelas_052025: "Ust. Ro'uuf Noor Huda Su'udin S.Pd",
-  kelas_062025: "Ust. Salahuddin Santoaji S.T.P",
-  kelas_072025: "Ust. Hammam Ahmed Saleh",
-  kelas_082025: "Ust. Alif Rafiqul",
-  kelas_092025: "Ust. Ali Wardana S.Pd",
-  kelas_102025: "Ust. Mullah Muhammad Umar",
-  kelas_112025: "Ust. Akhsani Tawqim SE",
-  kelas_122025: "Ust. Ikhsan Nur Khamid",
-  kelas_132025: "Ust. Abdul Haq",
-  kelas_142025: "Ust. Abdullah Al Guspari",
-  kelas_152025: "Ust. Abdullah Rafi",
-  kelas_162025: "Ust. Fajriul Ihsan",
-  kelas_172025: "Ust. Idris",
-  kelas_182025: "Ust. Muhammad Athayya Mumtaz",
-  kelas_192025: "Ust. M. Hanan Azili",
-  kelas_202025: "Ust. Muhammad Rama Miayasin",
-  kelas_212025: "Ust. Nur Afiq",
-  kelas_222025: "Ust. Raditya Baswara Raharjo",
-  kelas_232025: "Ust. Rafie Zahran Kurniawan",
-  kelas_242025: "Ust. Shidiq Hasan Khan"};
+  const custom = window.namaKelasCustom || window.NAMA_KELAS_CUSTOM || {  kelas_012526: "Ustadz M. Taqi Lazuardi",
+  kelas_012025: "Ahmad Wildan"};
     let kelompok = custom[kelas] || "";
     if (!kelompok) {
       const optText = kelasEl?.options?.[kelasEl.selectedIndex]?.text?.trim() || "";
@@ -10092,7 +10071,7 @@ function renderSessionHTML(s){
 
 <script>
   // ====== KONFIG (opsional dari window.*) ======
-  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 1);             // 34 default; 0 = tanpa batas atas
+  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 14);             // 34 default; 0 = tanpa batas atas
   const JENJANG_SAFETY_CAP = Number(window.JENJANG_SAFETY_CAP ?? 1000); // darurat bila tanpa batas
 
   // ====== Helper jenjang dinamis ======
