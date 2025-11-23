@@ -2712,9 +2712,10 @@ background:rgba(0,0,0,0.5); z-index:999; justify-content:center; align-items:cen
 
   // === Fungsi atur dropdown kelas ===
 function aturDropdownKelas(user) {
-  const semuaKelas = [  "kelas_012526"];
+  const semuaKelas = [  "kelas_012526","kelas_012025"];
 
-  const namaKelasCustom = {  kelas_012526: "Ustadz M. Taqi Lazuardi"};
+  const namaKelasCustom = {  kelas_012526: "Ustadz M. Taqi Lazuardi",
+  kelas_012025: "Ahmad Wildan"};
 
   kelasSelect.innerHTML = "";
 
@@ -5227,7 +5228,7 @@ function keteranganDisplayForKey(key, fallback){
   // === Helper Kelas/Kelompok ===
 function buildKelasKelompokLine(kelas, kelasEl) {
   const kelasNum = (String(kelas||'').match(/(\d+)/)?.[1]) || (kelas || '-');
-  const custom = window.namaKelasCustom || window.NAMA_KELAS_CUSTOM || {  kelas_012025: "Ust. Tukimin Abu Rasyid BA",
+  const custom = window.namaKelasCustom || window.NAMA_KELAS_CUSTOM || {  kelas_012025: "Ust. Ahmad Wildan BA",
   kelas_022025: "Ust. Dicky Miswardi BA",
   kelas_032025: "Ust. Jundullah BA",
   kelas_042025: "Ust. Abdullah",
